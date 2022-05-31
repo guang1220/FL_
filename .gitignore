@@ -9,5 +9,9 @@
 /fl_code/randomforest/log
 
 /fl_code/memorandum.py
-/*.sh
+/fl_code/logistic/*.sh
+/fl_code/svm/*.sh
+/fl_code/xgboost/*.sh
+/fl_code/mlp/*.sh
+/fl_code/randomforest/*.sh
 
