@@ -25,7 +25,7 @@ def RandomForest(cur_client):
     logger.info('test_method: {} start'.format('local_test'))
     result_log(logger, Ytest, y_pred, y_score)
     logger.info('test_method: {} end'.format('local_test'))
-    independent_test(logger, model, dir_path, cur_client)
+    independent_test(logger, model, cur_client)
     year_by_year_test(cur_client, logger, model, dir_path)
 
 def Logistic(cur_client):
@@ -44,7 +44,7 @@ def Logistic(cur_client):
     logger.info('test_method: {} start'.format('local_test'))
     result_log(logger, Ytest, y_pred, y_score)
     logger.info('test_method: {} end'.format('local_test'))
-    independent_test(logger, model, dir_path, cur_client)
+    independent_test(logger, model,  cur_client)
     year_by_year_test(cur_client, logger, model, dir_path)
 
 def SVM(cur_client):
@@ -63,7 +63,7 @@ def SVM(cur_client):
     logger.info('test_method: {} start'.format('local_test'))
     result_log(logger, Ytest, y_pred, y_score)
     logger.info('test_method: {} end'.format('local_test'))
-    independent_test(logger, model, dir_path, cur_client)
+    independent_test(logger, model, cur_client)
     year_by_year_test(cur_client, logger, model, dir_path)
 
 def xgboost(cur_client):
@@ -75,7 +75,7 @@ def xgboost(cur_client):
     logger.info('test_method: {} start'.format('local_test'))
     result_log(logger, Ytest, y_pred, y_score)
     logger.info('test_method: {} end'.format('local_test'))
-    independent_test(logger, model, dir_path, cur_client)
+    independent_test(logger, model,  cur_client)
     year_by_year_test(cur_client, logger, model, dir_path)
 
 def MLP(cur_client):
@@ -96,7 +96,7 @@ def MLP(cur_client):
     logger.info('test_method: {} start'.format('local_test'))
     result_log(logger, Ytest, y_pred, y_score)
     logger.info('test_method: {} end'.format('local_test'))
-    independent_test(logger, model, dir_path, cur_client)
+    independent_test(logger, model, cur_client)
     year_by_year_test(cur_client, logger, model, dir_path)
 
 if __name__ == "__main__":

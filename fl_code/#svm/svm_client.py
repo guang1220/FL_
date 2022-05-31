@@ -86,6 +86,6 @@ if __name__ == "__main__":
     model = SVC(kernel="linear", cache_size=50000, class_weight = "balanced")
     model.fit(x1, y1)
     local_test()
-    independent_test(logger, model, path, client_id)
+    independent_test(logger, model, client_id)
     logger.info('#end')
 

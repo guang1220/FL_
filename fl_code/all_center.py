@@ -20,7 +20,7 @@ from common_utils import col,independent_test
 def RandomForest():
     clf = RandomForestClassifier(random_state=0,class_weight='balanced',max_depth=7,n_estimators=20)
     clf = clf.fit(Xtrain, Ytrain)
-    independent_test(logger, clf, dir_path, 'all')
+    independent_test(logger, clf, 'all')
 
 def Logistic():
     model = LogisticRegression(penalty="l2",class_weight='balanced',max_iter=5000, warm_start=True)
@@ -29,15 +29,15 @@ def Logistic():
     ss = StandardScaler()
     ss = ss.fit(x_train.loc[:, col])
     x_train.loc[:, col] = ss.transform(x_train.loc[:, col])
-    model=model.fit(Xtrain, Ytrain)
-    independent_test(logger, model, dir_path, 'all')
+    model=model.fit(x_train, Ytrain)
+    independent_test(logger, model, 'all')
 
 
 def xgboost():
     weight = (Ytrain == 0).sum() / (Ytrain == 1).sum()
     model = XGBClassifier(learning_rate=0.1, n_estimators=20,scale_pos_weight=weight)
     model.fit(Xtrain, Ytrain)
-    independent_test(logger, model, dir_path, 'all')
+    independent_test(logger, model,  'all')
 
 def SVM():
     model = SVC(kernel="linear",class_weight = "balanced", cache_size=10000,probability=True)
@@ -51,7 +51,7 @@ def SVM():
     x_test.loc[:, col] = ss.transform(x_test.loc[:, col])
 
     model = model.fit(x_train, Ytrain)
-    independent_test(logger, model, dir_path, 'all')
+    independent_test(logger, model,'all')
 
 def MLP():
     model = MLPClassifier(hidden_layer_sizes=(200,200),max_iter=200,random_state=0)
@@ -66,7 +66,7 @@ def MLP():
     ros = RandomOverSampler(random_state=0)
     x_train_resampled, Ytrain_resampled = ros.fit_resample(x_train, Ytrain)
     model = model.fit(x_train_resampled, Ytrain_resampled)
-    independent_test(logger, model, dir_path, 'all')
+    independent_test(logger, model,  'all')
 
 if __name__ == "__main__":
     dir_path=yaml.load(open('../config.yaml'),Loader=yaml.FullLoader)['use_data_dir_path']

@@ -263,5 +263,5 @@ if __name__ == "__main__":
     fl.client.start_numpy_client(server_ip, client=client)
 
     local_test()
-    independent_test(logger, client, path, client_id)
+    independent_test(logger, client,client_id)
     logger.info('#end')
