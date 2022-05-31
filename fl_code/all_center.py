@@ -69,9 +69,9 @@ def MLP():
     independent_test(logger, model,  'all')
 
 if __name__ == "__main__":
-    dir_path=yaml.load(open('../config.yaml'),Loader=yaml.FullLoader)['use_data_dir_path']
-    classifier = sys.argv[1]
     parent_path = os.path.dirname(os.path.abspath(__file__))
+    dir_path=yaml.load(open(os.path.dirname(parent_path)+'/config.yaml'),Loader=yaml.FullLoader)['use_data_dir_path']
+    classifier = sys.argv[1]
     logger = get_logger('','all_center','all')
     logger.info('all_center')
     logger.info('#start')

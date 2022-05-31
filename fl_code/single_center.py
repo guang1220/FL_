@@ -100,12 +100,12 @@ def MLP(cur_client):
     year_by_year_test(cur_client, logger, model, dir_path)
 
 if __name__ == "__main__":
-    dir_path=yaml.load(open('../config.yaml'),Loader=yaml.FullLoader)['use_data_dir_path']
+    parent_path = os.path.dirname(os.path.abspath(__file__))
+    dir_path=yaml.load(open(os.path.dirname(parent_path)+'/config.yaml'),Loader=yaml.FullLoader)['use_data_dir_path']
     start_id=int(sys.argv[1])
     end_id=int(sys.argv[2])
     classifier=sys.argv[3]
     clients = range(start_id,end_id+1)
-    parent_path = os.path.dirname(os.path.abspath(__file__))
     logger = get_logger('','single_center','single')
     logger.info('single_center')
     for client in clients:
