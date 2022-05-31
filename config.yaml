@@ -1,0 +1,8 @@
+txt_data_dir_path: /home/guoyouguang/PycharmProjects/FL_test/txt_data/
+
+use_data_dir_path: /home/guoyouguang/PycharmProjects/FL_test/processed_data/filter_data/
+
+independent_data_path: /home/guoyouguang/PycharmProjects/FL_test/processed_data/filter_data/independent_data.pkl
+
+
+

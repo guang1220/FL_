@@ -1,0 +1,12 @@
+/log
+/txt_data
+/processed_data
+/result
+/fl_code/logistic/log
+/fl_code/svm/log
+/fl_code/xgboost/log
+/fl_code/mlp/log
+/fl_code/randomforest/log
+
+/fl_code/memorandum.py
+
