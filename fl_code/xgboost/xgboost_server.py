@@ -160,4 +160,4 @@ if __name__ == "__main__":
         min_fit_clients=client_num,
         min_eval_clients=2
     )
-    fl.server.start_server("0.0.0.0:"+port,strategy=strategy,config={"num_rounds": 3})
+    fl.server.start_server("0.0.0.0:"+port,strategy=strategy,config={"num_rounds": 21})

@@ -15,3 +15,5 @@
 /fl_code/mlp/*.sh
 /fl_code/randomforest/*.sh
 
+config.yaml
+
